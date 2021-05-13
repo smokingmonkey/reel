@@ -61,8 +61,12 @@ body {
 </div>
 
 <script>
-//var video = document.getElementById("myVideo");
+var video = document.getElementById("myVideo");
 var btn = document.getElementById("myBtn");
+  
+  $(video).on("click", function(e){
+  video.muted = !video.muted;
+});
 
 function myFunction() {
   window.open("https://www.linkedin.com/in/andyestebanochoa/")
