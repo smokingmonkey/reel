@@ -31,8 +31,8 @@ body {
 }
 
 #myBtn {
-  width: 1%;
-  height: 1%;
+  min-width: 100%;
+  min-height: 100%;
   padding: 10px;
   border: none;
   top: 20px;
@@ -49,7 +49,7 @@ body {
 </head>
 <body>
 
-<video autoplay muted="false" loop id="myVideo">
+<video autoplay onclick="unmute()" loop id="myVideo">
   <source src="RF.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -64,7 +64,7 @@ body {
 var video = document.getElementById("myVideo");
 var btn = document.getElementById("myBtn");
   
-  $(video).on("click", function(e){
+function unMute(){
   video.muted = !video.muted;
 });
 
