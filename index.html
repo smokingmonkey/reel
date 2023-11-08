@@ -40,68 +40,89 @@
     <!--    </video>-->
 
     <div class="video">
-      <video src="videos/1.mp4" muted></video>
+      <video id="1" src="videos/1.mp4" muted></video>
     </div>
+
     <div class="video">
-      <video src="videos/2.mp4" muted poster="img/2.png"></video>
+      <video id="2" src="videos/2.mp4" muted poster="img/2.png"></video>
     </div>
+
     <div class="video">
       <video src="videos/3.mp4#t=4.0" muted preload="metadata"></video>
     </div>
+
     <div class="video">
       <video src="videos/4.mp4#t=4.0" muted preload="metadata"></video>
     </div>
+
     <div class="video">
       <video src="videos/5.mp4" poster="img/5.png" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/6.mp4" poster="img/6.png" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/7.mp4" poster="img/7.png" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/8.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/9.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/10.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/11.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/12.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/13.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/14.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/15.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/16.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/17.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/18.mp4" poster="img/18.png" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/19.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/20.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/21.mp4" muted></video>
     </div>
+
     <div class="video">
       <video src="videos/22.mp4" muted></video>
     </div>
@@ -119,31 +140,16 @@
 <script>
 
 
-  // document.querySelectorAll('.video-container video').forEach(vid => {
-  //   vid.onclick = () => {
-  //     const popupVideo = document.querySelector('.popup-video video');
-  //     const isPlaying = !popupVideo.paused;
-  //
-  //     if (!isPlaying) {
-  //       // Comienza a reproducir el video y habilita el audio
-  //       popupVideo.src = vid.getAttribute('src');
-  //       popupVideo.muted = false;
-  //       popupVideo.play();
-  //       document.querySelector('.popup-video').style.display = 'block';
-  //     }
-  //   }
-  // });
-
-
-
-
-
   document.querySelectorAll('.video-container video').forEach(vid => {
     vid.onclick = () => {
       document.querySelector('.popup-video').style.display = 'block';
       document.querySelector('.popup-video video').src = vid.getAttribute('src');
       const popupVideo = document.querySelector('.popup-video video');
       popupVideo.muted = false;
+      if (vid.getAttribute('id') !== "1" && vid.getAttribute('id') !== "2") {
+        popupVideo.volume = 0.2;
+      }
+
     }
   })
 
@@ -162,14 +168,6 @@
     document.querySelector('.popup-video').style.display = 'none';
   };
 
-
-  // window.addEventListener('load', function() {
-  //   var video = document.getElementById('video');
-  //   video.addEventListener('loadedmetadata', function() {
-  //     var aspectRatio = video.videoWidth / video.videoHeight;
-  //     video.style.aspectRatio = aspectRatio;
-  //   });
-  // });
 
 </script>
 </body>
