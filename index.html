@@ -117,21 +117,12 @@
 </div>
 
 <script>
-
   document.querySelectorAll('.video-container video').forEach(vid => {
     vid.onclick = () => {
-      const popupVideo = document.querySelector('.popup-video video');
-      const isPlaying = !popupVideo.paused;
-
-      if (!isPlaying) {
-        // Comienza a reproducir el video y habilita el audio
-        popupVideo.src = vid.getAttribute('src');
-        popupVideo.muted = false;
-        popupVideo.play();
-        document.querySelector('.popup-video').style.display = 'block';
-      }
+      document.querySelector('.popup-video').style.display = 'block';
+      document.querySelector('.popup-video video').src = vid.getAttribute('src');
     }
-  });
+  })
 
   document.querySelector('.popup-video span').onclick = () => {
     const popupVideo = document.querySelector('.popup-video video');
